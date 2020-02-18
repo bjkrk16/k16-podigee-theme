@@ -1,0 +1,25 @@
+$min_width: 320px;
+$max_width: 1400px;
+
+html {
+    font-family: "Open Sans", "Roboto", Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    @include fluid-type($min_width, $max_width, 32px, 48px);
+    line-height: 1.2;
+    color: $black;
+}
+
+h3,
+h3 a {
+    @include fluid-type($min_width, $max_width, 24px, 32px);
+    line-height: 1.2;
+    color: $black;
+}
+
+p {
+    @include fluid-type($min_width, $max_width, 14px, 16px);
+    line-height: 1.5;
+    color: $black;
+}

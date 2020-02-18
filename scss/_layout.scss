@@ -1,0 +1,21 @@
+.section-main {
+    box-sizing: border-box;
+    margin: 0 auto;
+    @include for-tablet-portrait-up {
+        max-width: 90%;
+    }
+    @include for-tablet-landscape-up {
+        max-width: 80%;
+    }
+    @include for-desktop-up {
+        max-width: 70%;
+    }
+    @media (min-width: 1400px) {
+        max-width: 1400px;
+    }
+    @include for-phone-only {
+        width: 100%;
+        margin: 0;
+        padding: 0 1rem;
+    }
+}

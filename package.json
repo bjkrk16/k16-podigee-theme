@@ -1,0 +1,29 @@
+{
+  "name": "k16-podigee-theme",
+  "version": "1.0.0",
+  "description": "Sample repo that allows to use external files in Podigee blog themes.",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjkrk16/k16-podigee-theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bjkrk16/k16-podigee-theme/issues"
+  },
+  "homepage": "https://github.com/bjkrk16/k16-podigee-theme#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/register": "^7.8.3",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-sass": "^4.0.2"
+  }
+}

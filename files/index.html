@@ -1,0 +1,53 @@
+{% if blog.announcement != blank %}
+  <div class="announcement">
+    {{blog.announcement}}
+  </div>
+{% endif %}
+
+{% for episode in episodes %}
+  <article class="post">
+
+    <div class="post__cover">
+      <img src="{{episode.cover_image_url}}" alt="{{episode.title}}">
+    </div>
+
+    <div class="post__content">
+
+      <div class="content__content-box">
+
+        <header class="content-box__header">
+          <h3 class="header__heading">
+            <a class="heading__link" href="{{episode.url}}">{{episode.title}}</a>
+          </h3>
+          <time>
+            {{episode.published_at | date: "%d. %B %Y"}}
+          </time>
+        </header>
+  
+        <section class="content-box__description">
+          {{episode.description}}
+        </section>
+  
+        <!-- <section class="content-box__downloads">
+          {{episode.downloads}}
+        </section> -->
+  
+        <section class="content-box__social-media">
+          {{episode.social_links}}
+          {{episode.flattr}}
+        </section>
+        
+      </div>
+
+      <section class="content-box__media-player">
+        {{episode.player}}
+      </section>
+
+    </div>
+  </article>
+{% endfor %}
+
+<div class="pagination">
+  {{ pagination.previous_page }}
+  {{ pagination.next_page }}
+</div>

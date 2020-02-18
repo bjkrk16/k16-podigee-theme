@@ -1,0 +1,45 @@
+.post {
+    width: 100%;
+    display: flex;
+    background: $bg;
+    @include for-tablet-portrait-up {
+        &:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+    }
+    @include for-phone-only {
+        flex-direction: column;
+        margin-bottom: 2rem;
+        background: white;
+    }
+
+    .post__cover {
+        @include for-phone-only {
+            width: 100%;
+        }
+        width: 40%;
+    }
+    .post__content {
+        padding: 2rem;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        @include for-phone-only {
+            width: 100%;
+            padding: 0;
+            flex-direction: column-reverse;
+        }
+
+        .content__content-box {
+            @include for-tablet-portrait-up {
+                margin-bottom: 2rem;
+            }
+            .content-box__header {}
+            .content-box__description {}
+            .content-box__downloads {}
+            .content-box__social-media {}
+        }
+        .content-box__media-player {}
+    }
+}
