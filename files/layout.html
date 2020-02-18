@@ -7,9 +7,11 @@
       <h1>
         {{podcast.title}}
       </h1>
-      <p>
+      {% if podcast.description %}
+      <p class="title__description">
         {{podcast.description}}
       </p>
+      {% endif %}
     </div>
     <div class="header__subscr-btn">
       {% if podcast.subscribe_button_data.configuration.enabled %}
