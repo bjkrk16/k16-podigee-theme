@@ -7,13 +7,27 @@
       <h1>
         {{podcast.title}}
       </h1>
-      <p>
-        {{podcast.subtitle}}
+      {% if podcast.description %}
+      <p class="title__description">
+        {{podcast.description}}
       </p>
+      {% endif %}
+    </div>
+    <div class="header__subscr-btn">
+      {% if podcast.subscribe_button_data.configuration.enabled %}
+        {{podcast.subscribe_button}}
+      {% else %}
+      <ul class="feeds">
+        <li><a href="{{podcast.feeds.mp3}}" rel="alternate">mp3</a></li>
+        <li><a href="{{podcast.feeds.aac}}" rel="alternate">aac/mp4 (iTunes)</a></li>
+        <li><a href="{{podcast.feeds.vorbis}}" rel="alternate">vorbis/ogg</a></li>
+        <li><a href="{{podcast.feeds.opus}}" rel="alternate">opus</a></li>
+      </ul>
+      {% endif %}
     </div>
   </header>
   <div class="posts">
-    {% include 'navigation.html' %}
+    <!-- {% include 'navigation.html' %} -->
 
     {{page_content}}
   </div>
