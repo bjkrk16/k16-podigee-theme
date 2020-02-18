@@ -10,10 +10,15 @@
     .header__title {
         @include for-phone-only {}
         @include for-tablet-portrait-up {}
-        @include for-tablet-landscape-up {
-            width: 75%;
-        }
+        @include for-tablet-landscape-up {}
         @include for-desktop-up {}
         @include for-big-desktop-up {}
+        h1 {
+            margin: 0;
+            margin-top: 32px;
+        }
+        p {
+            margin: 16px 0;
+        }
     }
 }
