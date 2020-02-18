@@ -1,6 +1,13 @@
 .header {
     width: 100%;
     margin-bottom: 32px;
+    @include for-phone-only {}
+    @include for-tablet-portrait-up {}
+    @include for-tablet-landscape-up {
+        margin-bottom: 32px;
+    }
+    @include for-desktop-up {}
+    @include for-big-desktop-up {}
     .header__top-image {
         width: 100%;
         .top-image__img {
@@ -12,7 +19,9 @@
         margin-top: 32px;
         @include for-phone-only {}
         @include for-tablet-portrait-up {}
-        @include for-tablet-landscape-up {}
+        @include for-tablet-landscape-up {
+            margin-top: 64px;
+        }
         @include for-desktop-up {}
         @include for-big-desktop-up {}
         h1 {
