@@ -59,14 +59,31 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
 
-    const shownotesArr = document.getElementsByTagName('shownotes');
-    const linkList = shownotesArr.map(item => {
-      const arr = [...item.getElementsByTagName('a')]
-      return arr
-    });
-    console.log(linkList)
-    // get the last link item (the YT-Tease Video) from the shownotes HTMLCollection
-    console.log('last link in list', linkList.map(item => item[item.length - 1]))
+    const shownotesArr = document.getElementsByClassName('shownotes');
+
+    const handleShowNotes = (shownotes) => {
+
+      const notes = [...shownotes]
+      
+      if (notes.length > 0) {
+        const linkList = notes.map(item => [...item.getElementsByTagName('a')]);
+        console.log(linkList)
+        // get the last link item (the YT-Tease Video) from the shownotes HTMLCollection
+        const lastLinkList = linkList.map(item => item[item.length - 1])
+        console.log('last links in list', lastLinkList)
+        return lastLinkList
+      } else {
+        return console.error('shownotes Arr is undefined', shownotes)
+      }
+      
+    }
+
+    console.log('handleShowNotes', 
+      handleShowNotes(shownotesArr).map(i => i.href)
+    );
+    console.log('dom post cover images', 
+      [...document.getElementsByClassName('post__cover')].map( i => [...i.getElementsByTagName('img')][0].src ) 
+    );
 
   });
 </script>
