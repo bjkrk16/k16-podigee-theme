@@ -1,42 +1,36 @@
 <article class="post">
 
-  <header>
-    <h1 class="post-heading">
-      {{episode.title}}
-    </h1>
-    <time>
-      {{episode.published_at | date: "%d. %B %Y"}}
-    </time>
-  </header>
+  <div class="post__cover">
+    <img src="{{episode.cover_image_url}}" alt="{{episode.title}}">
+  </div>
 
-  <section class="post-media-player">
-    {{episode.player}}
-  </section>
-  <section class="post-downloads">
-    {{episode.downloads}}
-  </section>
-  
-  {% if episode.transcript %}
-  <section class="post-transcript">
-    <a href="{{episode.url}}/transcript">{{'read_transcript' | t}}</a>
-  </section>
-  {% endif %}
+  <div class="post__content">
 
-  <section class="post-social-media">
-    {{episode.social_links}}
-    {{episode.flattr}}
-  </section>
+    <div class="content__content-box">
 
-  <section class="post-show-notes">
-    {% if episode.show_notes != blank %}
-      {{episode.show_notes}}
-    {% endif %}
-    {% if episode.show_notes == blank %}
-      {{episode.description}}
-    {% endif %}
-  </section>
+      <header class="content-box__header">
+        <h3 class="header__heading">
+          <a class="heading__link" href="{{episode.url}}">{{episode.title}}</a>
+        </h3>
+        <time>
+          {{episode.published_at | date: "%d. %B %Y"}}
+        </time>
+      </header>
 
-  {% if blog.show_comments %}
-    {% include 'comments.html' %}
-  {% endif %}
+      <section class="content-box__description">
+        {{episode.description}}
+      </section>
+
+      <section class="content-box__social-media">
+        {{episode.social_links}}
+        {{episode.flattr}}
+      </section>
+      
+    </div>
+
+    <section class="content-box__media-player">
+      {{episode.player}}
+    </section>
+
+  </div>
 </article>
