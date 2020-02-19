@@ -55,3 +55,18 @@
   {{ pagination.previous_page }}
   {{ pagination.next_page }}
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    const shownotesArr = document.getElementsByTagName('shownotes');
+    const linkList = shownotesArr.map(item => {
+      const arr = [...item.getElementsByTagName('a')]
+      return arr
+    });
+    console.log(linkList)
+    // get the last link item (the YT-Tease Video) from the shownotes HTMLCollection
+    console.log('last link in list', linkList.map(item => item[item.length - 1]))
+
+  });
+</script>
