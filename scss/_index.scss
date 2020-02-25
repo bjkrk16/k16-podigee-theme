@@ -41,5 +41,13 @@
             .content-box__social-media {}
         }
         .content-box__media-player {}
+        .shownotes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 0.1;
+            width: 0.1;
+            visibility: hidden;
+        }
     }
 }

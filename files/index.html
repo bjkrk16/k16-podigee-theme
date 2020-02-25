@@ -59,9 +59,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
 
-    const shownotesArr = document.getElementsByClassName('shownotes');
-
-    const handleShowNotes = (shownotes) => {
+    const getPodcastYoutTubePreviewLinks = (shownotes) => {
 
       const notes = [...shownotes]
       
@@ -78,11 +76,19 @@
       
     }
 
-    console.log('handleShowNotes', 
-      handleShowNotes(shownotesArr).map(i => i.href)
+    const getPodcastCoverImgs = () => {
+      const postCoverArr = [...document.getElementsByClassName('post__cover')]
+      return postCoverArr.map( i => [...i.getElementsByTagName('img')][0].src ) 
+    }
+
+    const shownotes = document.getElementsByClassName('shownotes');
+
+    console.log('getPodcastYoutTubePreviewLinks', 
+      getPodcastYoutTubePreviewLinks(shownotes).map(i => i.href)
     );
+
     console.log('dom post cover images', 
-      [...document.getElementsByClassName('post__cover')].map( i => [...i.getElementsByTagName('img')][0].src ) 
+      getPodcastCoverImgs()
     );
 
   });
